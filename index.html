@@ -61,7 +61,12 @@
       border: none;
       border-radius: 12px;
     }
-    #<div id="countdown">🚀 Trade Now</div>
+    #countdown {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin: 2em 0 1em;
+      color: #ff8800;
+    }
     footer {
       margin-top: 3em;
       padding-bottom: 2em;
@@ -78,7 +83,7 @@
     Now immortalized on Solana blockchain — join the wave of cuteness, memes & joy!</p>
   </header>
 
-  <div id="countdown">⏳ Loading countdown...</div>
+  <div id="countdown">🚀 Trade Now</div>
 
   <div class="links">
     <a href="https://pump.fun/coin/56hbU42XwUzN1egumgTo1wMvmUF8pR9izZYxboaYpump" target="_blank">🚀 Pump.fun</a>
@@ -97,32 +102,5 @@
     Made with ❤️ by the Doudou community.
   </footer>
 
-  <script>
-    // Countdown timer (example: ends 3 days from now)
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 3); // 3-day timer
-
-    const countdownEl = document.getElementById("countdown");
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate.getTime() - now;
-
-      if (distance <= 0) {
-        countdownEl.innerHTML = "🎉 Launch Time! Let's Go!";
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdownEl.innerHTML = `⏳ Launch in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
-</body>
+  </body>
 </html>
