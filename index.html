@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>$DOUDOU Token</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fffaf4;
+      color: #333;
+      text-align: center;
+    }
+    header {
+      padding: 2em 1em;
+    }
+    img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 2.5em;
+      margin: 0.5em 0;
+    }
+    p {
+      font-size: 1.1em;
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    .links {
+      margin-top: 2em;
+    }
+    .links a {
+      display: inline-block;
+      margin: 0.5em;
+      padding: 0.75em 1.4em;
+      background: #ffd580;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 10px;
+      transition: background 0.3s;
+    }
+    .links a:hover {
+      background: #ffc04d;
+    }
+    .dex-chart {
+      margin: 3em auto 2em;
+      max-width: 90%;
+    }
+    iframe {
+      width: 100%;
+      height: 480px;
+      border: none;
+      border-radius: 12px;
+    }
+    #countdown {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin: 2em 0 1em;
+      color: #ff8800;
+    }
+    footer {
+      margin-top: 3em;
+      padding-bottom: 2em;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="assets/doudou-logo.jpg" alt="Mr Doudou Logo" />
+    <h1>🐾 $DOUDOU Token</h1>
+    <p><strong>Mr. Doudou</strong> is the viral munchkin cat melting hearts on Douyin & TikTok.<br/>
+    Now immortalized on Solana blockchain — join the wave of cuteness, memes & joy!</p>
+  </header>
+
+  <div id="countdown">⏳ Loading countdown...</div>
+
+  <div class="links">
+    <a href="https://pump.fun/coin/56hbU42XwUzN1egumgTo1wMvmUF8pR9izZYxboaYpump" target="_blank">🚀 Pump.fun</a>
+    <a href="https://dexscreener.com/solana/5fdehpfvbgkjzj4avuxsap9ty6pd2ried3qgihgjmwxf" target="_blank">📊 Dexscreener</a>
+    <a href="https://x.com/MrDoudou_" target="_blank">🐦 Twitter</a>
+    <a href="https://www.douyin.com/user/MS4wLjABAAAAGtbS7FFIPI0QTzPGYUrVsGkFTdFvhZAFHwiF2IiGti_jw3_UELQPTZxE3p8v77za" target="_blank">🎥 Douyin</a>
+  </div>
+
+  <div class="dex-chart">
+    <iframe src="https://dexscreener.com/solana/5fdehpfvbgkjzj4avuxsap9ty6pd2ried3qgihgjmwxf?embed=1"></iframe>
+  </div>
+
+  <footer>
+    Contract Address (Solana): <br/>
+    <code>56hbU42XwUzN1egumgTo1wMvmUF8pR9izZYxboaYpump</code><br/><br/>
+    Made with ❤️ by the Doudou community.
+  </footer>
+
+  <script>
+    // Countdown timer (example: ends 3 days from now)
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 3); // 3-day timer
+
+    const countdownEl = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate.getTime() - now;
+
+      if (distance <= 0) {
+        countdownEl.innerHTML = "🎉 Launch Time! Let's Go!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `⏳ Launch in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
